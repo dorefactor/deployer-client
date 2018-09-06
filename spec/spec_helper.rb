@@ -1,5 +1,4 @@
-require 'init'
-
+require_relative '../lib/deployer-client'
 
 RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
