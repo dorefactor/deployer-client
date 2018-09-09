@@ -89,5 +89,4 @@ describe Deployer::Client::Registry do
       expect(ping_result.err).to eql('UNAUTHORIZED, bad credentials')
     end
   end
-
 end

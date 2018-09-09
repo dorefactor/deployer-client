@@ -4,12 +4,12 @@ module Deployer
   module Client
     class Registry
       include HTTParty
-      base_uri 'https://somehosts'
+      base_uri Deployer.config.host
 
       def initialize()
         @auth = { 
-          username: 'u', 
-          password: 'p' 
+          username: Deployer.config.user, 
+          password: Deployer.config.password 
         }
       end
     
@@ -42,6 +42,8 @@ module Deployer
           return Model::Base.create_success(json_parse_body)
         when 'Unauthorized'
           return Model::Base.create_error('UNAUTHORIZED, bad credentials')
+        else
+          return Model::Base.new(false, json_parse_body, :empty)
         end
       end
 
