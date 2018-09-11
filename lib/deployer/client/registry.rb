@@ -1,7 +1,7 @@
 require 'httparty'
 
 module Deployer
-  module Client
+  class Client
     class Registry
       include HTTParty
       base_uri Deployer.config.host

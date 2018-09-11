@@ -1,7 +1,6 @@
 module Deployer
   module Model
     class Base
-      
       attr_reader :out, :err
 
       def self.create_error(err)
@@ -21,7 +20,6 @@ module Deployer
       def success?
         @success
       end
-   
     end
   end
 end
